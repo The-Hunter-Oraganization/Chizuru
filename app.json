@@ -1,10 +1,10 @@
 {
-    "name": "Chizuru",
-    "description": "A Normal Telegram Bot Which can Download And Rename Your Files",
-    "logo": "https://wallpapercave.com/wp/wp6965282.jpg",
-    "keywords": ["Telegram","python"],
-    "repository": "https://github.com/The-Hunter-Oraganization/Chizuru",
-    "success_url": "https://t.me/sohailkhan_indianime",
+    "name": "Erika Amano",
+    "description": "Simple Telegram Video Encoder Bot.",
+    "repository": "https://github.com/The-Hunter-Oraganization/Erika-Amano",
+    "logo": "https://telegra.ph/file/7e3c7f4f70272c6e59c52.jpg",
+    "keywords": ["python", "pyrogram", "telegram", "compressor-bot"],
+    "image": "heroku/python",
     "formation": {
       "worker": {
         "quantity": 1,
@@ -12,26 +12,35 @@
       }
     },
     "env": {
-        "API_ID": {
-            "description": "You api id, from my.telegram.org or @apiScrapperRoBot.",
-            "value": "266344335"
-        },
-        "API_HASH": {
-            "description": "You api hash, from my.telegram.org or @apiScrapperRoBot.",
-            "value": "a4476bdb326701fdadfffe834593db59eb"
-        },
-        "BOT_TOKEN": {
-            "description": "Make a bot from @BotFather, and enter it's api token here.",
-            "value": ""
-        },
-        "MONGO_DB": {
-            "description": "Get cloud.mongodb.com",
-            "value": ""
-        },
-        "OWNER": {
-            "description": "Owner ID",
-            "value": "",
-            "required": false
+      "API_ID": {
+        "description": "App API_ID from https://my.telegram.org"
+      },
+      "APP_HASH": {
+        "description": "App APP_HASH from https://my.telegram.org"
+      },
+      "BOT_TOKEN": {
+        "description": "Bot token from https://t.me/BotFather",
+        "required": true
+      },
+      "OWNER_ID": {
+        "description": "Your Telegram ID",
+        "required": true
+      },
+      "MONGO_DB": {
+        "description": "get from cloud.mongodb.com",
+        "required": true
+      },
+      "FILES_CHANNEL": {
+        "description": "Files Channel ID",
+        "required": false
+      }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+          },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
         }
-    }
-}
+    ]
+  }
