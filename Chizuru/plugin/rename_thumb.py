@@ -86,7 +86,7 @@ HOME = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton("ᴅᴇᴠᴇʟᴏᴘᴇʀ", "help_about_dev"), 
-            InlineKeyboardButton("ʜᴇʟᴘ", "help_about_dev"), 
+            InlineKeyboardButton("ʜᴇʟᴘ", "help_helpsd"), 
         ]
     ]
 )
