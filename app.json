@@ -1,0 +1,32 @@
+{
+    "name": "Chizuru",
+    "description": "A Normal Telegram Bot Which can Download And Rename Your Files",
+    "logo": "https://wallpapercave.com/wp/wp6965282.jpg",
+    "keywords": ["Telegram","python"],
+    "repository": "https://github.com/The-Hunter-Oraganization/Chizuru",
+    "success_url": "https://t.me/sohailkhan_indianime",
+    "stack": "container",
+    "env": {
+        "API_ID": {
+            "description": "You api id, from my.telegram.org or @apiScrapperRoBot.",
+            "value": "266344335"
+        },
+        "API_HASH": {
+            "description": "You api hash, from my.telegram.org or @apiScrapperRoBot.",
+            "value": "a4476bdb326701fdadfffe834593db59eb"
+        },
+        "BOT_TOKEN": {
+            "description": "Make a bot from @BotFather, and enter it's api token here.",
+            "value": ""
+        },
+        "MONGO_DB": {
+            "description": "Get cloud.mongodb.com",
+            "value": ""
+        },
+        "OWNER": {
+            "description": "Owner ID",
+            "value": "",
+            "required": false
+        }
+    }
+}

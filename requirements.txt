@@ -1,0 +1,9 @@
+pyrogram==1.4.16
+tgcrypto
+pySmartDL
+bs4
+requests
+pymongo
+dnspython
+asyncio
+natsort
