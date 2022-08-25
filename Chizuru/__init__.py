@@ -3,7 +3,6 @@ import logging
 import time
 import sys
 from pyrogram import Client
-from redis import Redis
 
 logging.basicConfig(level=logging.INFO)
 
