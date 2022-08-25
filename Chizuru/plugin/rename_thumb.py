@@ -97,6 +97,7 @@ HELP = InlineKeyboardMarkup(
             InlineKeyboardButton("ʟᴇᴇᴄʜ ғɪʟᴇ", "help_whatisleech"),
             InlineKeyboardButton("ᴛʜᴜᴍʙɴᴀɪʟ", "help_thumbnail"),
             InlineKeyboardButton("ʀᴇɴᴀᴍᴇ", "help_rename"),
+            InlineKeyboardButton("ᴀᴜᴛʜᴏʀɪᴢᴇ", 'help_authandremove')
         ],
         [
             InlineKeyboardButton("ᴅᴇᴠᴇʟᴏᴘᴇʀ", "help_about_dev")
@@ -108,21 +109,25 @@ HELP = InlineKeyboardMarkup(
 async def answer(client:Client, callback_query): 
     
     if 'whatisleech' in callback_query.data:
-        await callback_query.message.edit("**How To Leech**\n\n👉**Leech with custom name** : `/download link | custom_name.mkv`\n👉**Leech normal**: `/download link`")
+        await callback_query.message.edit("**How To Leech**\n\n👉**Leech with custom name** : `/download link | custom_name.mkv`\n👉**Leech normal**: `/download link`",reply_markup=HELP)
     elif 'rename' in callback_query.data: 
-        await callback_query.message.edit("**Rename Files**\n\n👉`/rename new_name.mkv`")
+        await callback_query.message.edit("**Rename Files**\n\n👉`/rename new_name.mkv`",reply_markup=HELP)
     elif 'thumbnail' in callback_query.data:
-        await callback_query.message.edit("**Thumbnail**\n\n👉**Set Thumbnail** : `/sthumb` message reply to photo\n👉**Remove Thumbnail** : `/dthumb` remove delete\n👉**View Thumbnail** : `/vthumb` to check current thumbnail")
+        await callback_query.message.edit("**Thumbnail**\n\n👉**Set Thumbnail** : `/sthumb` message reply to photo\n👉**Remove Thumbnail** : `/dthumb` remove delete\n👉**View Thumbnail** : `/vthumb` to check current thumbnail",reply_markup=HELP)
     elif 'go_home' in callback_query.data:
         text = f"**Konnichiwa**, `{callback_query.message.from_user.first_name}`\n\nI'm Chizuru An Leech And File Renaming Bot Made By [Soheru San](https://t.me/sohailkhan_indianime)\n\n**My Version** - `{bot_version}`\n**Heroku Supported** - `True`\n**Pyrogram Version** - `1.16.4`"
+        await callback_query.message.edit(text, reply_markup = HOME)
     elif 'about_dev' in callback_query.data:
         text = f'Hello `{callback_query.from_user.first_name}`,\n\n'
         text += "I'm Sohail\nTo connect with me, Check Below Buttons"
         await callback_query.message.edit(text, reply_markup=BUTTONS_DEV)             
     elif 'helpsd' in callback_query.data:
         await callback_query.message.edit(f'**Hello `{Client.get_users(callback_query.from_user.id).mention()}`**,\n\nUse Below Buttons To Check Our Modules.', reply_markup=HELP)  
-    await callback_query.answer("Done") 
-
+    elif 'authandremove' in callback_query.data:
+        text = "**Add Sudo**\n`/auth` message reply user\n`/auth userid`\n`/auth usernam`\n\n"
+        text += "**Remove Sudo**\n`/remauth` message reply user\n`/remauth userid`\n`/remauth usernam`\n\n"
+        text += "**List Auth Users** : `/listauth`"
+    await callback_query.answer("Done")     
 @pbot.on_message(filters.command('start', prefixes=trg))
 async def start_bot_text(client: Client, message: Message):
     images = os.listdir('./Images/Start')

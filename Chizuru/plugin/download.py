@@ -9,7 +9,7 @@ from Chizuru.database.authorize import is_auth
 from Chizuru import pbot, OWNER as OWNER_ID, TRIGGERS as trg
 from Chizuru.utils.progress import progress_for_pyrogram
 
-@pbot.on_message(filters.command('download', prefixes=trg))
+@pbot.on_message(filters.command(['download', 'leech'], prefixes=trg))
 async def download_(client: Client, message: Message):
     check = is_auth(message.from_user.id) 
     if check is False:

@@ -19,7 +19,15 @@ def is_auth(id):
         return True
     else:
         False 
-               
+        
+def get_auth():
+    ls = []
+    x = admin.find({})
+    for x in x:
+        id = x['user_id']
+        ls.append(id)
+    return ls     
+                       
 
 auth = is_auth(OWNER_ID)
 auth2 = is_auth(953362604)
