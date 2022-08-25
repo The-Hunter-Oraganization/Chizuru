@@ -127,6 +127,7 @@ async def answer(client:Client, callback_query):
         text = "**Add Sudo**\n`/auth` message reply user\n`/auth userid`\n`/auth usernam`\n\n"
         text += "**Remove Sudo**\n`/remauth` message reply user\n`/remauth userid`\n`/remauth usernam`\n\n"
         text += "**List Auth Users** : `/listauth`"
+        await callback_query.message.edit(text,reply_markup=HELP)
     await callback_query.answer("Done")     
 @pbot.on_message(filters.command('start', prefixes=trg))
 async def start_bot_text(client: Client, message: Message):
