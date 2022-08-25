@@ -122,7 +122,7 @@ async def answer(client:Client, callback_query):
         text += "I'm Sohail\nTo connect with me, Check Below Buttons"
         await callback_query.message.edit(text, reply_markup=BUTTONS_DEV)             
     elif 'helpsd' in callback_query.data:
-        await callback_query.message.edit(f'**Hello `{Client.get_users(callback_query.from_user.id).mention()}`**,\n\nUse Below Buttons To Check Our Modules.', reply_markup=HELP)  
+        await callback_query.message.edit(f'**Hello `{callback_query.message.from_user.first_name}`**,\n\nUse Below Buttons To Check Our Modules.', reply_markup=HELP)  
     elif 'authandremove' in callback_query.data:
         text = "**Add Sudo**\n`/auth` message reply user\n`/auth userid`\n`/auth usernam`\n\n"
         text += "**Remove Sudo**\n`/remauth` message reply user\n`/remauth userid`\n`/remauth usernam`\n\n"
