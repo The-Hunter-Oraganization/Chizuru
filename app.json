@@ -15,14 +15,14 @@
       "API_ID": {
         "description": "App API_ID from https://my.telegram.org"
       },
-      "APP_HASH": {
+      "API_HASH": {
         "description": "App APP_HASH from https://my.telegram.org"
       },
       "BOT_TOKEN": {
         "description": "Bot token from https://t.me/BotFather",
         "required": true
       },
-      "OWNER_ID": {
+      "OWNER": {
         "description": "Your Telegram ID",
         "required": true
       },
@@ -30,10 +30,6 @@
         "description": "get from cloud.mongodb.com",
         "required": true
       },
-      "FILES_CHANNEL": {
-        "description": "Files Channel ID",
-        "required": false
-      }
     },
     "buildpacks": [
         {
