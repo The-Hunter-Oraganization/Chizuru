@@ -5,7 +5,6 @@
     "keywords": ["Telegram","python"],
     "repository": "https://github.com/The-Hunter-Oraganization/Chizuru",
     "success_url": "https://t.me/sohailkhan_indianime",
-    "stack": "heroku-20",
     "env": {
         "API_ID": {
             "description": "You api id, from my.telegram.org or @apiScrapperRoBot.",
