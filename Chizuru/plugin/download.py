@@ -39,7 +39,7 @@ async def download_(client: Client, message: Message):
             await status_message.edit(msgd)
             time.sleep(5)
         except:
-            print("Same Message")   
+            pass  
         
     if obj.isSuccessful():
         msgd = f"downloaded file to `{destination}`"
@@ -50,18 +50,24 @@ async def download_(client: Client, message: Message):
                     await message.reply_document(destination, thumb=f'downloads/thumb{message.from_user.id}.png',file_name=filename, progress=progress_for_pyrogram, progress_args=("**Uploadding.....** \n",status_message, C_TIME))
                     os.remove(destination)
                 except:  
-                    await message.reply(text='Error While File Uploading')   
+                    try:
+                        await message.reply_document(destination,file_name=filename, progress=progress_for_pyrogram, progress_args=("**Uploadding.....** \n",status_message, C_TIME))
+                    except:
+                        await message.reply(text='Error While File Uploading')   
             else:    
                 try:
                     await message.reply_document(destination, thumb=f'downloads/thumb{message.from_user.id}.png', progress=progress_for_pyrogram, progress_args=("**Uploadding.....** \n",status_message, C_TIME))
                     os.remove(destination)
                 except:
-                    await message.reply(text='Error While File Uploading')    
+                    try:
+                        await message.reply_document(destination, progress=progress_for_pyrogram, progress_args=("**Uploadding.....** \n",status_message, C_TIME))
+                    except:
+                        await message.reply(text='Error While File Uploading')    
         try:
             await status_message.edit(msgd)
             time.sleep(5)
         except:
-            print("Same Message")    
+            pass
     else:
         msgd = "There were some errors:"
         for e in obj.get_errors():
@@ -70,7 +76,7 @@ async def download_(client: Client, message: Message):
                     await status_message.edit(msgd)
                     time.sleep(5)
                 except:
-                    print("Same Message")    
+                    pass
                     
 
         
