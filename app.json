@@ -10,6 +10,7 @@
         "quantity": 1,
         "size": "free"
       }
+    },
     "env": {
         "API_ID": {
             "description": "You api id, from my.telegram.org or @apiScrapperRoBot.",
