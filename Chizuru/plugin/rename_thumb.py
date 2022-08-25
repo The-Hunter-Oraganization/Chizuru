@@ -77,7 +77,7 @@ BUTTONS_DEV = InlineKeyboardMarkup(
         ],
         [
             InlineKeyboardButton('ɪɴsᴛᴀɢʀᴀᴍ', url='https://instagram.com/_soheru'),
-            InlineKeyboardButton('ʜᴏᴍᴇ', 'help_start_or_go_back')
+            InlineKeyboardButton('ʜᴏᴍᴇ', 'help_go_home')
         ]
     ]
 )
